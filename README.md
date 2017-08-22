@@ -1,5 +1,5 @@
 ## Shadowsocks for Android
-
+ 
 A [shadowsocks](http://shadowsocks.org) client for Android, written in Scala.
 
 <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="48"></a>
