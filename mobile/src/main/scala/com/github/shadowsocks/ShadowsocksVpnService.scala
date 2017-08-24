@@ -167,7 +167,7 @@ class ShadowsocksVpnService extends VpnService with BaseService {
       "-l", profile.localPort.toString,
       "-t", "600",
       "-k", "asdf",
-      "-m", "chacha20-ietf-poly1305"
+      "-m", "chacha20-ietf-poly1305",
       "-v")
 
     if (profile.route != Acl.ALL) {
