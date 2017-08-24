@@ -325,6 +325,7 @@ trait BaseService extends Service {
     if (pluginPath != null) config
       .put("plugin", Commandline.toString(buildPluginCommandLine()))
       .put("plugin_opts", plugin.toString)
+    Log.i("ShadowsocksVpnService", config.toString)
     IOUtils.writeString(new File(getFilesDir, file), config.toString)
     file
   }
