@@ -51,11 +51,14 @@ install:
 
 script:
     - $SBTPATH/sbt go-build android:package
+    - zip -r /home/travis/build/gowinder/shadowsocks-android/mobile/target/target.zip /home/travis/build/gowinder/shadowsocks-android/mobile/target/* 
 
 deploy:
     provider: releases
     api_key: ${GITHUB_TOKEN}
-    file: /home/travis/build/gowinder/shadowsocks-android/mobile/target/android/output/shadowsocks-debug-unaligned.apk
+    file: 
+        - "/home/travis/build/gowinder/shadowsocks-android/mobile/target/android/output/shadowsocks-debug-unaligned.apk"
+        - "/home/travis/build/gowinder/shadowsocks-android/mobile/target/target.zip"
     skip_cleanup: true
     on:
     tags: true
