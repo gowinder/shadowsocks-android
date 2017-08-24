@@ -151,13 +151,25 @@ class ShadowsocksVpnService extends VpnService with BaseService {
   override protected def buildPluginCommandLine(): ArrayBuffer[String] = super.buildPluginCommandLine() += "-V"
 
   def startShadowsocksDaemon() {
+//    val cmd = ArrayBuffer[String](getApplicationInfo.nativeLibraryDir + "/libss-local.so",
+//      "-V",
+//      "-u",
+//      "-b", "127.0.0.1",
+//      "-l", profile.localPort.toString,
+//      "-t", "600",
+//      "-c", buildShadowsocksConfig("ss-local-vpn.conf"))
+
     val cmd = ArrayBuffer[String](getApplicationInfo.nativeLibraryDir + "/libss-local.so",
       "-V",
-      "-u",
+      "-s", "119.23.64.170",
+      "-p", "8388",
       "-b", "127.0.0.1",
       "-l", profile.localPort.toString,
       "-t", "600",
-      "-c", buildShadowsocksConfig("ss-local-vpn.conf"))
+      "-k", "asdf",
+      "-m", "chacha20-ietf-poly1305"
+      "-v"
+    )
 
     if (profile.route != Acl.ALL) {
       cmd += "--acl"
