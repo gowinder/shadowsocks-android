@@ -319,7 +319,7 @@ trait BaseService extends Service {
   protected final def buildShadowsocksConfig(file: String): String = {
     val config = new JSONObject()
       .put("server", profile.host)
-      .put("server_port", profile.remotePort.toString)
+      .put("server_port", profile.remotePort)
       .put("password", profile.password)
       .put("method", profile.method)
     if (pluginPath != null) config
