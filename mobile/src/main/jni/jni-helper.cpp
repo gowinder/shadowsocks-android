@@ -78,7 +78,7 @@ jint Java_com_github_shadowsocks_jnihelper_sendfd(JNIEnv *env, jobject thiz, jin
     strncpy(addr.sun_path, sock_str, sizeof(addr.sun_path)-1);
 
     if (connect(fd, (struct sockaddr*)&addr, sizeof(addr)) == -1) {
-        LOGE("connect() failed: %s (fd = %d)\n", strerror(errno), fd);
+        LOGE("connect() failed: %s (fd = %d), sock_str=%s\n", strerror(errno), fd, sock_str);
         close(fd);
         return (jint)-1;
     }
