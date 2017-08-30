@@ -68,6 +68,8 @@ class GuardedProcess(cmd: String*) {
             .directory(app.getFilesDir)
             .start()
 
+          Log.i(TAG, "GuardedProcess set directory " + app.getFilesDir.getAbsolutePath())
+
           new StreamLogger(process.getInputStream(), TAG, Log.i).start()
           new StreamLogger(process.getErrorStream(), TAG, Log.e).start()
 
