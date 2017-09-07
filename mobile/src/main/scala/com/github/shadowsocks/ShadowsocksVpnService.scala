@@ -168,7 +168,8 @@ class ShadowsocksVpnService extends VpnService with BaseService {
       "-t", "600",
       "-k", "asdf",
       "-m", "chacha20-ietf-poly1305",
-      "-v")
+      "-v",
+      "-X", "19|1234|34qcPxEJcrE4xVLa41J5")
 
     if (profile.route != Acl.ALL) {
       cmd += "--acl"
